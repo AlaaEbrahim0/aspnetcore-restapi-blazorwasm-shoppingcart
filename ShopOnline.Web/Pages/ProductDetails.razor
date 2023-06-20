@@ -13,18 +13,26 @@ else if (ErrorMessage != null)
 
 else
 {
-	<h3 class="mb-3">Product Details</h3>
 	<div class="row">
 		<div class="col-md-6">
 			<img class="img-fluid" src="@Product.ImageUrl"/>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-6" style="padding: 50px">
 			<h3>@Product.Name</h3>
 			<p>@Product.Description</p>
 			<div>
-				<span>@Product.Price.ToString("c")&nbsp;(@Product.Qty items in stock)</span>
+				<span>
+					<b>@Product.Price.ToString("c")&nbsp;</b>
+					(@Product.Qty items in stock)
+				</span>
 			</div>
-			<button hre class="btn btn-success" @onclick="() => (AddToCart_Click(
+			<select class="form-select my-3 mt-5" aria-label="Default select example">
+				<option selected>Choose Size:</option>
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+			</select>
+			<button hre class="btn btn-outline-success w-100" @onclick="() => (AddToCart_Click(
 				new CartItemToAddDto
 			{
 				ProductId = Product.Id,
@@ -32,7 +40,29 @@ else
 				Qty = 1
 			}))">
 			<i class="bi bi-cart"></i>
-			Add To Cart</button>
+			Add To Cart
+			</button>
+
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-secondary mt-3" data-bs-toggle="modal" data-bs-target="#sizeGuide">
+				Size Guide
+			</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="sizeGuide">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<img src="Images/SizeGuide.webp" class="img-fluid"/>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+
+			
 	</div>
 }

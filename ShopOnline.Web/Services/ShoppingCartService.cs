@@ -37,12 +37,11 @@ namespace ShopOnline.Web.Services
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
 
-        public async Task<IEnumerable<CartItemDto>> GetAll(int userId)
+        public async Task<List<CartItemDto>> GetAll(int userId)
         {
             try
             {
@@ -51,9 +50,9 @@ namespace ShopOnline.Web.Services
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.NoContent)
                     {
-                        return Enumerable.Empty<CartItemDto>();
+                        return new List<CartItemDto>();
                     }
-                    return await response.Content.ReadFromJsonAsync<IEnumerable<CartItemDto>>();
+                    return await response.Content.ReadFromJsonAsync<List<CartItemDto>>();
                 }
                 else
                 {
@@ -73,5 +72,31 @@ namespace ShopOnline.Web.Services
         {
             throw new NotImplementedException();
         }
-    }
+
+		public async Task<CartItemDto> RemoveItem(int itemId)
+		{
+            try
+            {
+                var response = await httpClient.DeleteAsync($"api/ShoppingCart/RemoveItem/{itemId}");
+                if (response.IsSuccessStatusCode)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                    {
+                        return default(CartItemDto);
+                    }
+                    return await response.Content.ReadFromJsonAsync<CartItemDto>();
+                }
+                else
+                {
+                    var messsage = await response.Content.ReadAsStringAsync();
+                    throw new Exception($"Status Code: {response.StatusCode} Message: {messsage}");
+                }
+                
+            }
+            catch (Exception)
+            { 
+                throw;
+            }
+		}
+	}
 }

@@ -27,5 +27,6 @@ namespace ShopOnline.Web.Pages
         {
             return groupedProductsDto.FirstOrDefault(x => x.CategoryId == groupedProductsDto.Key).CategoryName;
         }
+        
     }
 }

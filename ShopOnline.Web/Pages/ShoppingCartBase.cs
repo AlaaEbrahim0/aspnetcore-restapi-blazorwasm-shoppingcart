@@ -9,7 +9,7 @@ namespace ShopOnline.Web.Pages
         [Inject]
         public IShoppingCartService CartService { get; set; }
 
-        public IEnumerable<CartItemDto> CartItems{ get; set; }
+        public List<CartItemDto> CartItems{ get; set; }
 
         public string ErrorMessage { get; set; }
 
@@ -24,6 +24,20 @@ namespace ShopOnline.Web.Pages
 			{
 				ErrorMessage = ex.Message;
 			}
+		}
+
+		private async Task RemoveItem_UIReflection(int cartItemId)
+		{
+			var cartItem = CartItems
+				.FirstOrDefault(x => x.Id == cartItemId);
+
+			CartItems.Remove(cartItem);
+		}
+
+		public async Task RemoveItem_Click(int cartItemId)
+		{
+			var cartItem = await CartService.RemoveItem(cartItemId);
+			RemoveItem_UIReflection (cartItemId);
 		}
 
 	}

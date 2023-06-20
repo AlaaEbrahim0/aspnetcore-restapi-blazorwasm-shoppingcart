@@ -24,6 +24,8 @@ else
 						<h5>@cartItem.ProductName</h5>
 						<p class="mb-4">@cartItem.ProductDescription</p>
 						<span>Price: <b>@cartItem.Price.ToString("c")</b></span>
+						<br />
+						<button @onclick="async () => await RemoveItem_Click(cartItem.Id)" class="btn btn-danger"><i class="bi bi-trash"></i></button>
 					</div>
 				</div>
 			}

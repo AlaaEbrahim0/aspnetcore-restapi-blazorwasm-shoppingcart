@@ -83,5 +83,25 @@
             }
         }
 
+        [HttpDelete("{cartItemId:int}")]
+        public async Task<ActionResult<CartItemDto>> RemoveItem(int cartItemId)
+        {
+            try
+            {
+                var cartItem = await cartRepository.RemoveItem(cartItemId);
+                if (cartItem == null)
+                {
+                    return NotFound();                    
+                }
+                var dto = mapper.Map<CartItemDto>(cartItem);
+                return Ok(dto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+
     }
 }

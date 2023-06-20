@@ -6,6 +6,7 @@ namespace ShopOnline.Web.Services.Contracts
     {
         Task<CartItemDto> AddItem(CartItemToAddDto cartItemToAdd);
         Task<CartItemDto> GetItem(int itemId);
-        Task<IEnumerable<CartItemDto>> GetAll(int userId);
+        Task<CartItemDto> RemoveItem(int itemId);
+        Task<List<CartItemDto>> GetAll(int userId);
     }
 }

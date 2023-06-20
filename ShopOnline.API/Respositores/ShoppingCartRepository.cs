@@ -1,4 +1,6 @@
-﻿namespace ShopOnline.API.Respositores
+﻿using Microsoft.IdentityModel.Protocols.OpenIdConnect;
+
+namespace ShopOnline.API.Respositores
 {
 	public class ShoppingCartRepository : IShoppingCartRepository
 	{
@@ -57,15 +59,26 @@
 		{
 			return await context.CartItems
 				.AsNoTracking()
+				.AsSplitQuery()
 				.Include(x => x.Cart)
 				.Include(x => x.Product)
 				.Where(x => x.Id == id)
 				.SingleOrDefaultAsync();
 		}
 
-		public Task<CartItem> RemoveItem(int id)
+		public async Task<CartItem> RemoveItem(int id)
 		{
-			throw new NotImplementedException();
+			var cartItem = await context.CartItems
+				.Include(x => x.Product)
+				.FirstOrDefaultAsync(x => x.Id == id);
+
+			if (cartItem != null)
+			{
+				context.CartItems.Remove(cartItem);
+				await context.SaveChangesAsync();
+			}
+			return cartItem;
+
 		}
 	}
 }
