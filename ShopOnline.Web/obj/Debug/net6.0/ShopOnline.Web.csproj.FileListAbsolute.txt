@@ -828,3 +828,5 @@ D:\Educational\Elezzba\ShopOnline.Web\obj\Debug\net6.0\build-gz\jcTEazD8.gz
 D:\Educational\Elezzba\ShopOnline.Web\obj\Debug\net6.0\build-gz\c40GfUMl.gz
 D:\Educational\Elezzba\ShopOnline.Web\obj\Debug\net6.0\scopedcss\Pages\Spinner.razor.rz.scp.css
 D:\Educational\Elezzba\ShopOnline.Web\obj\Debug\net6.0\scopedcss\Pages\DisplayProducts.razor.rz.scp.css
+D:\Educational\Elezzba\ShopOnline.Web\bin\Debug\net6.0\libman.json
+D:\Educational\Elezzba\ShopOnline.Web\obj\Debug\net6.0\scopedcss\Shared\NavBar.razor.rz.scp.css

@@ -11,13 +11,9 @@ a:hover .card[b-r631xo10ml]{
 .card[b-r631xo10ml]{
     transition: box-shadow .3s ease-in-out;
     overflow: hidden;
+    border: none;
+    margin-bottom: 20px;
+    font-weight: 200;
 }
 
-a:hover img[b-r631xo10ml]{
-    transform: scale(1.07);
-    transition: .3s ease-in-out;
-}
 
-img[b-r631xo10ml]{
-    transition: .5s ease-in-out;
-}

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "e7yjDB3MmxDyGxXanqhjLGEeYX5jfjgnCwp9OYKQwG0=",
+  "Hash": "60V4ETWQKJSE6oyabwmenqajGUAV2xcyHo9Mzt6qcIs=",
   "Source": "ShopOnline.Web",
   "BasePath": "/",
   "Mode": "Root",
@@ -7140,12 +7140,12 @@
       "OriginalItemSpec": "wwwroot\\icon-192.png"
     },
     {
-      "Identity": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty1.png",
+      "Identity": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty1.webp",
       "SourceId": "ShopOnline.Web",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/Beauty/Beauty1.png",
+      "RelativePath": "Images/Beauty/Beauty1.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7154,15 +7154,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Beauty\\Beauty1.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Beauty\\Beauty1.webp"
     },
     {
-      "Identity": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty2.png",
+      "Identity": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty2.webp",
       "SourceId": "ShopOnline.Web",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/Beauty/Beauty2.png",
+      "RelativePath": "Images/Beauty/Beauty2.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7171,15 +7171,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Beauty\\Beauty2.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Beauty\\Beauty2.webp"
     },
     {
-      "Identity": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty3.png",
+      "Identity": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty3.webp",
       "SourceId": "ShopOnline.Web",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/Beauty/Beauty3.png",
+      "RelativePath": "Images/Beauty/Beauty3.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7188,15 +7188,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Beauty\\Beauty3.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Beauty\\Beauty3.webp"
     },
     {
-      "Identity": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty4.png",
+      "Identity": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty3-1.jpg",
       "SourceId": "ShopOnline.Web",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/Beauty/Beauty4.png",
+      "RelativePath": "Images/Beauty/Beauty3-1.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7205,15 +7205,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Beauty\\Beauty4.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Beauty\\Beauty3-1.jpg"
     },
     {
-      "Identity": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty5.png",
+      "Identity": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty4.webp",
       "SourceId": "ShopOnline.Web",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "Images/Beauty/Beauty5.png",
+      "RelativePath": "Images/Beauty/Beauty4.webp",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -7222,7 +7222,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\Beauty\\Beauty5.png"
+      "OriginalItemSpec": "wwwroot\\Images\\Beauty\\Beauty4.webp"
     },
     {
       "Identity": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Electronic\\electronic4.png",
@@ -7546,6 +7546,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\js\\displayProducts.js",
+      "SourceId": "ShopOnline.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "js/displayProducts.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\displayProducts.js"
     },
     {
       "Identity": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\sample-data\\weather.json",

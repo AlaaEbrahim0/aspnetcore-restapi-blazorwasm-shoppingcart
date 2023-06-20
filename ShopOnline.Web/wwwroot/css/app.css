@@ -1,7 +1,13 @@
 ﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
 
+:root {
+    --primary-color: black;
+    font-family: 'Manrope', sans-serif;
+}
+
 html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--primary-color);
 }
 
 h1:focus {
@@ -9,7 +15,11 @@ h1:focus {
 }
 
 a, .btn-link {
-    color: #0071c1;
+    color: var(--primary-color);
+}
+
+a:hover{
+    color:rgb(116, 213, 214);
 }
 
 .btn-primary {

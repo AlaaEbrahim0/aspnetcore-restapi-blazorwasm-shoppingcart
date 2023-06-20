@@ -13,24 +13,24 @@
       "PackagePath": "staticwebassets\\ShopOnline.Web.styles.css"
     },
     {
-      "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty1.png",
-      "PackagePath": "staticwebassets\\Images\\Beauty\\Beauty1.png"
+      "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty1.webp",
+      "PackagePath": "staticwebassets\\Images\\Beauty\\Beauty1.webp"
     },
     {
-      "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty2.png",
-      "PackagePath": "staticwebassets\\Images\\Beauty\\Beauty2.png"
+      "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty2.webp",
+      "PackagePath": "staticwebassets\\Images\\Beauty\\Beauty2.webp"
     },
     {
-      "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty3.png",
-      "PackagePath": "staticwebassets\\Images\\Beauty\\Beauty3.png"
+      "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty3-1.jpg",
+      "PackagePath": "staticwebassets\\Images\\Beauty\\Beauty3-1.jpg"
     },
     {
-      "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty4.png",
-      "PackagePath": "staticwebassets\\Images\\Beauty\\Beauty4.png"
+      "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty3.webp",
+      "PackagePath": "staticwebassets\\Images\\Beauty\\Beauty3.webp"
     },
     {
-      "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty5.png",
-      "PackagePath": "staticwebassets\\Images\\Beauty\\Beauty5.png"
+      "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Beauty\\Beauty4.webp",
+      "PackagePath": "staticwebassets\\Images\\Beauty\\Beauty4.webp"
     },
     {
       "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\Images\\Electronic\\Electronics1.png",
@@ -163,6 +163,10 @@
     {
       "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\js\\displayProducts.js",
+      "PackagePath": "staticwebassets\\js\\displayProducts.js"
     },
     {
       "Id": "D:\\Educational\\Elezzba\\ShopOnline.Web\\wwwroot\\sample-data\\weather.json",
