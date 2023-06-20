@@ -1,0 +1,24 @@
+﻿@page "/"
+@inherits ProductsBase
+
+@if (Products == null)
+{
+	<Spinner></Spinner>
+}
+else
+{
+	var productCount = Products.Count();
+
+	@if (productCount > 0)
+	{
+
+		@foreach (var productGroup in GetProductsGroupedByCategory())
+		{
+			<h5>@GetCategoryName(productGroup)</h5>
+
+			<div class="row mt-3">
+				<DisplayProducts Products="productGroup"></DisplayProducts>
+			</div>
+		}
+	}
+}
