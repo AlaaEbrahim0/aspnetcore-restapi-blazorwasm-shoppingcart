@@ -58,7 +58,7 @@ namespace ShopOnline.Web.Services
                     throw new Exception(message);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw;
             }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using System.Diagnostics.Metrics;
+using Microsoft.AspNetCore.Components;
 using ShopOnline.Models.Dtos;
 using ShopOnline.Web.Services.Contracts;
 
@@ -19,6 +20,13 @@ namespace ShopOnline.Web.Pages
         public int ProductId { get; set; }
 
         public ProductDto Product { get; set; }
+
+		public int Qty { get; set; } = 1;
+
+		public void UpdateQuantity(int counter)
+		{
+			Qty = counter;
+		}
 
         public string ErrorMessage { get; set; }
 
@@ -43,7 +51,6 @@ namespace ShopOnline.Web.Pages
 			}
 			catch (Exception)
 			{
-
 				throw;
 			}
 		}

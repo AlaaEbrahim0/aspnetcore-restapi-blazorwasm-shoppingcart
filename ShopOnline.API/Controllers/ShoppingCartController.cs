@@ -75,7 +75,7 @@
                 }
 
                 var dto = mapper.Map<CartItemDto>(cartItem);
-                return CreatedAtAction(nameof(GetItem), new { id = dto.Id }, dto);
+                return CreatedAtAction(nameof(GetItem), new { cartItemId = cartItem.Id }, cartItem);
             }
             catch (Exception ex)
             {

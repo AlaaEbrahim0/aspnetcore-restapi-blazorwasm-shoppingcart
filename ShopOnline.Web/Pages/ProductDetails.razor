@@ -32,12 +32,13 @@ else
 				<option value="2">Two</option>
 				<option value="3">Three</option>
 			</select>
-			<button hre class="btn btn-outline-success w-100" @onclick="() => (AddToCart_Click(
+			<QuantityCounter OnCounterChanged="@UpdateQuantity"></QuantityCounter>
+			<button class="btn btn-outline-success w-100" @onclick="() => (AddToCart_Click(
 				new CartItemToAddDto
 			{
 				ProductId = Product.Id,
 				CartId = 1,
-				Qty = 1
+				Qty = Qty
 			}))">
 			<i class="bi bi-cart"></i>
 			Add To Cart
