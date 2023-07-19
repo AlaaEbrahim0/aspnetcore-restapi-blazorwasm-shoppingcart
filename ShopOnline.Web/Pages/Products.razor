@@ -1,5 +1,4 @@
-﻿@page "/"
-@inherits ProductsBase
+﻿@inherits ProductsBase
 
 @if (Products == null)
 {
@@ -7,22 +6,26 @@
 }
 else
 {
+	
 	var productCount = Products.Count();
+	<div >
 
-	<h3 class="text-center">All Products</h3>
+		<h3 class="text-center">All Products</h3>
 
-	@if (productCount > 0)
-	{	
 
-		@foreach (var productGroup in GetProductsGroupedByCategory())
+		@if (productCount > 0)
 		{
-			<div class="category-group">
-				<h5 class="p-3">@GetCategoryName(productGroup)</h5>
 
-				<div class="row mt-3">
-					<DisplayProducts Products="productGroup"></DisplayProducts>
+			@foreach (var productGroup in GetProductsGroupedByCategory())
+			{
+				<div class="category-group">
+					<h5 class="p-3">@GetCategoryName(productGroup)</h5>
+
+					<div class="row mt-3">
+						<DisplayProducts Products="productGroup"></DisplayProducts>
+					</div>
 				</div>
-			</div>
+			}
 		}
-	}
+	</div>
 }
