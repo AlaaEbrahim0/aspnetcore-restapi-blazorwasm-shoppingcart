@@ -80,5 +80,19 @@ namespace ShopOnline.API.Respositores
 			return cartItem;
 
 		}
+
+		public async Task<CartItem> UpdateItem(int cartItemId, CartItemToUpdateDto itemToUpdate)
+		{
+			var cartItem = await context.CartItems
+				.Include(x => x.Product)
+				.SingleOrDefaultAsync(x => x.Id == cartItemId);
+
+			if (cartItem is not null)
+			{
+				cartItem.Qty = itemToUpdate.Qty;
+				await context.SaveChangesAsync();
+			}
+			return cartItem;
+		}
 	}
 }

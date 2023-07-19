@@ -1,4 +1,6 @@
-﻿namespace ShopOnline.API.Controllers
+﻿using ShopOnline.API.Respositores;
+
+namespace ShopOnline.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
@@ -92,6 +94,25 @@
                 if (cartItem == null)
                 {
                     return NotFound();                    
+                }
+                var dto = mapper.Map<CartItemDto>(cartItem);
+                return Ok(dto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+            }
+        }
+
+        [HttpPatch("{cartItemId:int}")]
+        public async Task<ActionResult<CartItemDto>> UpdateItem(int cartItemId, CartItemToUpdateDto cartItemToUpdate)
+        {
+            try
+            {
+                var cartItem = await cartRepository.UpdateItem(cartItemId, cartItemToUpdate);
+                if (cartItem is null)
+                {
+                    return NotFound();
                 }
                 var dto = mapper.Map<CartItemDto>(cartItem);
                 return Ok(dto);

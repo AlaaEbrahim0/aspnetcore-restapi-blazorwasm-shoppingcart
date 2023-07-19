@@ -1,4 +1,6 @@
 ﻿using System.Net.Http.Json;
+using System.Text;
+using Newtonsoft.Json;
 using ShopOnline.Models.Dtos;
 using ShopOnline.Web.Services.Contracts;
 
@@ -13,7 +15,8 @@ namespace ShopOnline.Web.Services
             this.httpClient = httpClient;
         }
 
-        public async Task<CartItemDto> AddItem(CartItemToAddDto cartItemToAdd)
+
+		public async Task<CartItemDto> AddItem(CartItemToAddDto cartItemToAdd)
         {
             try
             {
@@ -95,6 +98,36 @@ namespace ShopOnline.Web.Services
             }
             catch (Exception)
             { 
+                throw;
+            }
+		}
+
+		public async Task<CartItemDto> UpdateItem(CartItemToUpdateDto cartItemToUpdate)
+		{
+            try
+            {
+                var jsonRequest = JsonConvert.SerializeObject(cartItemToUpdate);
+                var content = new StringContent(jsonRequest, Encoding.UTF8, "application/json-patch+json");
+
+                var response = await httpClient.PatchAsync($"api/ShoppingCart/UpdateItem/{cartItemToUpdate.Id}", content);
+                if (response.IsSuccessStatusCode)
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.NotFound)
+                    {
+                        return default(CartItemDto);
+                    }
+                    return await response.Content.ReadFromJsonAsync<CartItemDto>();
+                }
+                else
+                {
+                    var message = await response.Content.ReadAsStringAsync();
+                    throw new Exception(message);
+                }
+
+            }
+            catch (Exception)
+            {
+
                 throw;
             }
 		}
