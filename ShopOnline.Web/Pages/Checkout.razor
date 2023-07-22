@@ -1,0 +1,16 @@
+﻿@page "/checkout"
+@inherits CheckoutBase
+
+
+<div class="row mt-5">
+	<div class="col-md-6">
+        <div id="smart-button-container" style="width: 75%; margin: 0 auto;">
+            <input type="hidden" name="descriptionInput" id="description" @bind="PaymentDescription" />
+            <input type="hidden" name="amountInput" id="amount" @bind="PaymentAmount">
+            <div style="text-align: center; margin-top: 0.625rem;" id="paypal-button-container"></div>
+        </div>
+    </div>
+    <div class="col-md-6">
+		<h3 class="text-center">CART SUMMARY</h3>
+    </div>
+</div>
