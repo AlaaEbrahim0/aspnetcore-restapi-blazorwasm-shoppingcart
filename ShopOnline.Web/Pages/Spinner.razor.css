@@ -40,7 +40,7 @@
     .loader::before {
         width: 32px;
         height: 32px;
-        border-color: #843CC3 #843CC3 transparent transparent;
+        border-color: #CBFFF2 #95E4FF transparent transparent;
         animation: rotation 1.5s linear infinite;
     }
 

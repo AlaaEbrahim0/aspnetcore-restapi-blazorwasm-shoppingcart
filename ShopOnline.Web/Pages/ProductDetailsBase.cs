@@ -1,11 +1,12 @@
 ﻿using System.Diagnostics.Metrics;
 using Microsoft.AspNetCore.Components;
 using ShopOnline.Models.Dtos;
+using ShopOnline.Models.Enums;
 using ShopOnline.Web.Services.Contracts;
 
 namespace ShopOnline.Web.Pages
 {
-	public class ProductDetailsBase: ComponentBase
+    public class ProductDetailsBase: ComponentBase
 	{
         [Inject]
         public IProductService ProductService { get; set; }

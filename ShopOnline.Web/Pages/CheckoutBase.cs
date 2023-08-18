@@ -17,6 +17,8 @@ namespace ShopOnline.Web.Pages
 
         public decimal PaymentAmount { get; set; }
         public string PaymentDescription { get; set; }
+		public decimal ShippingCost { get; set; } = 50;
+        public decimal SubTotal { get; set; }
         public int TotalQty { get; set; }
 
         protected override async Task OnInitializedAsync()
@@ -28,9 +30,10 @@ namespace ShopOnline.Web.Pages
 				if (CartItems != null)
 				{
 					Guid orderId = Guid.NewGuid();
-					PaymentAmount = CartItems.Sum(x => x.TotalPrice);
+                    SubTotal = CartItems.Sum(x => x.TotalPrice);
 					TotalQty = CartItems.Sum(x => x.Qty);
 					PaymentDescription = $"O_{orderId}_{1}";
+					PaymentAmount = SubTotal + ShippingCost;
 				}
 			}
 			catch (Exception)

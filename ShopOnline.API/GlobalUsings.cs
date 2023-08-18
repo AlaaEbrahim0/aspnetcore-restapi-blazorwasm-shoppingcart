@@ -9,3 +9,4 @@ global using  ShopOnline.API.Entites;
 global using  ShopOnline.API.Extensions;
 global using AutoMapper;
 global using ShopOnline.Models.Dtos;
+global using ShopOnline.Models.Enums;
