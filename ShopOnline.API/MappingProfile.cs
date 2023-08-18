@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ShopOnline.Models.Models;
 
 namespace ShopOnline.API
 {
@@ -16,7 +17,8 @@ namespace ShopOnline.API
                 .ForMember(dest => dest.Price, src => src.MapFrom(c => c.Product.Price))
                 .ForMember(dest => dest.TotalPrice, src => src.MapFrom(c => c.Product.Price * c.Qty));
 
-            
+            CreateMap<RegisterModel, AppUser>()
+                .ForMember(dest => dest.UserName, src => src.MapFrom(u => u.Email.Split("@", StringSplitOptions.None)[0]));
 
         }
     }

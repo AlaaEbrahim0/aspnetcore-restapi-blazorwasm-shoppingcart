@@ -39,6 +39,19 @@ namespace ShopOnline.API.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("Gender")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
@@ -71,7 +84,8 @@ namespace ShopOnline.API.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("IdentityUser");
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
 
                     b.HasData(
                         new
@@ -189,6 +203,23 @@ namespace ShopOnline.API.Migrations
                             Id = 4,
                             Name = "Shoes"
                         });
+                });
+
+            modelBuilder.Entity("ShopOnline.API.Entites.Governorate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Governorate");
                 });
 
             modelBuilder.Entity("ShopOnline.API.Entites.Product", b =>
@@ -409,54 +440,60 @@ namespace ShopOnline.API.Migrations
                         },
                         new
                         {
-                            Id = 19,
-                            CategoryId = 4,
-                            Description = "Colorful trainsers - available in most sizes",
-                            ImageUrl = "/Images/Shoes/Shoes2.png",
-                            Name = "Colorful Trainers",
-                            Price = 150m,
-                            Qty = 60
-                        },
-                        new
-                        {
-                            Id = 20,
-                            CategoryId = 4,
-                            Description = "Blue Nike Trainers - available in most sizes",
-                            ImageUrl = "/Images/Shoes/Shoes3.png",
-                            Name = "Blue Nike Trainers",
-                            Price = 200m,
-                            Qty = 70
-                        },
-                        new
-                        {
-                            Id = 21,
-                            CategoryId = 4,
-                            Description = "Colorful Hummel Trainers - available in most sizes",
-                            ImageUrl = "/Images/Shoes/Shoes4.png",
-                            Name = "Colorful Hummel Trainers",
-                            Price = 120m,
-                            Qty = 120
-                        },
-                        new
-                        {
-                            Id = 22,
-                            CategoryId = 4,
-                            Description = "Red Nike Trainers - available in most sizes",
-                            ImageUrl = "/Images/Shoes/Shoes5.png",
-                            Name = "Red Nike Trainers",
-                            Price = 200m,
-                            Qty = 100
-                        },
-                        new
-                        {
-                            Id = 23,
-                            CategoryId = 4,
-                            Description = "Birkenstock Sandles - available in most sizes",
-                            ImageUrl = "/Images/Shoes/Shoes6.png",
-                            Name = "Birkenstock Sandles",
-                            Price = 50m,
-                            Qty = 150
+                            Id = 5,
+                            Code = "XXL"
                         });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("ShopOnline.API.Entites.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("ShopOnline.API.Entites.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShopOnline.API.Entites.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("ShopOnline.API.Entites.AppUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ShopOnline.API.Entites.CartItem", b =>
