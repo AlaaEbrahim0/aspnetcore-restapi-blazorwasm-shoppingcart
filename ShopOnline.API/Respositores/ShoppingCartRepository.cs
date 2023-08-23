@@ -48,11 +48,12 @@ namespace ShopOnline.API.Respositores
 		public async Task<IEnumerable<CartItem>> GetAll(int userId)
 		{
 			return await context.CartItems
-				 .AsNoTracking()
-				 .Include(c => c.Product)
-				 .Include(c => c.Cart)
-				 .Where(c => c.Cart.UserId == userId)
-				 .ToListAsync();
+				.AsNoTracking()
+				.Include(c => c.Cart)
+				.Include(c => c.Product)
+				.Where(c => c.Cart.UserId == userId)
+				.ToListAsync();
+
 		}
 
 		public async Task<CartItem> GetItem(int id)

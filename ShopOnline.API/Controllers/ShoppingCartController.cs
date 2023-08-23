@@ -20,7 +20,7 @@ namespace ShopOnline.API.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet("{userId}")]
+        [HttpGet("{userId:int}")]
         public async Task<ActionResult<IEnumerable<CartItemDto>>> GetAll(int userId)
         {
             try

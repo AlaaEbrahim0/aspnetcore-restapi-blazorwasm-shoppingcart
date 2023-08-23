@@ -21,11 +21,7 @@ namespace ShopOnline.API.Data
         {
             base.OnModelCreating(modelBuilder);
 
-
-
             modelBuilder.Seed();
-
-            
         }
     }
 }
