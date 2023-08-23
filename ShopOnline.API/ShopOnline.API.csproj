@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Extensions\ModelBuilderExtensions.cs\**" />
+    <Content Remove="Extensions\ModelBuilderExtensions.cs\**" />
+    <EmbeddedResource Remove="Extensions\ModelBuilderExtensions.cs\**" />
+    <None Remove="Extensions\ModelBuilderExtensions.cs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Bogus" Version="34.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.16" />

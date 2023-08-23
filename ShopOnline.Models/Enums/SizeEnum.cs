@@ -1,6 +1,6 @@
 ﻿namespace ShopOnline.Models.Enums
 {
-    public enum SizeCode
+    public enum SizeEnum
     {
         S,
         M,

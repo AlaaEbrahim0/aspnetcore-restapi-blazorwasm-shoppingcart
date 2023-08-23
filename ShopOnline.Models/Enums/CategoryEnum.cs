@@ -1,10 +1,11 @@
 ﻿namespace ShopOnline.API.Entites.Enums
 {
-	public enum CategoryType
+	public enum CategoryEnum
 	{
 		SHIRT,
-		TSHIRT,
-		HOODIE,
-		SWEATSHIRT
+		PANT,
+		BASIC,
+		PRTINED
 	}
+
 }

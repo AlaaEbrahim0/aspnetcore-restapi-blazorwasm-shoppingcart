@@ -2,7 +2,7 @@
 
 namespace ShopOnline.API.Entites.Enums
 {
-	public enum FitType
+	public enum FitTypeEnum
 	{
 		REGULAR,
 		OVERSIZE

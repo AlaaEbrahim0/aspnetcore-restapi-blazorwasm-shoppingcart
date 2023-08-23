@@ -1,6 +1,6 @@
 ﻿namespace ShopOnline.API.Entites.Enums
 {
-    public enum Governorate
+    public enum CityEnum
     {
         Alexandria,
         Aswan,

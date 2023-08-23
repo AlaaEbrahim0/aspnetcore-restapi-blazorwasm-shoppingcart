@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using ShopOnline.API.Data;
 using ShopOnline.API.Entites;
 using ShopOnline.API.Respositores.Contracts;
@@ -18,7 +19,9 @@ namespace ShopOnline.API.Respositores
         {
             var products = await context.Products
                 .AsNoTracking()
-                .Include(p => p.Category)
+                .Include(p => p.FitTypes)
+                .Include(p => p.Categories)
+                .Include(p => p.Images)
                 .ToListAsync();
 
             return products;
@@ -35,13 +38,14 @@ namespace ShopOnline.API.Respositores
 
         public async Task<IEnumerable<Product>> GetProductsByCategoryId(int categoryId)
         {
-            var products = await context.Products
+            var products = await context.Categories
                 .AsNoTracking()
-                .Where(p => p.CategoryId == categoryId)
-                .Include(p => p.Category)
+                .Where(c => c.Id == categoryId)
+                .Include(c => c.Products)
+                .Select(c => c.Products)
                 .ToListAsync();
 
-            return products;
+            return (IEnumerable<Product>)products;
         }
     }
 }
